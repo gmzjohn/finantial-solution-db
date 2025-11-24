@@ -27,7 +27,7 @@ Start the database container with the following command:
 PASSWORD: example 1234567
 
 ```bash
-podman run -d --rm -e POSTGRES_PASSWORD={PASSWORD} -p 5432:5432 -v ./data:/var/lib/postgresql/data:Z finantial-solution-db:{VERSION}
+podman run -d --rm -e POSTGRES_USER=admin -e POSTGRES_PASSWORD={PASSWORD} -e POSTGRES_DB=finantial-solution -p 5432:5432 -v ./data:/var/lib/postgresql/data:Z finantial-solution-db:{VERSION}
 ```
 
 > **Note**: The `-v ./data:/var/lib/postgresql/data:Z` flag ensures your data persists locally in the `./data` directory.
